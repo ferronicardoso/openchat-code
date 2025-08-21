@@ -1,116 +1,120 @@
 # OpenChat Code
 
-Uma interface de linha de comando simples e elegante para interagir com APIs de IA, inspirada na simplicidade do Claude Code.
+A simple and elegant command-line interface to interact with AI APIs, inspired by the simplicity of Claude Code.
 
-## Funcionalidades
+> **Note:** This project was developed 100% using Claude Code, demonstrating the power of AI-assisted development.
 
-- **Chat Interativo**: Conversas contínuas com contexto mantido
-- **Mensagens Únicas**: Envio direto de comandos
-- **Interface Limpa**: Design minimalista focado no conteúdo
-- **Banner Elegante**: Apresentação visual com ASCII art
-- **Cores Intuitivas**: Diferenciação clara entre usuário e assistente
+![OpenChat Code](images/openchat-code.png)
 
-## Instalação
+## Features
 
-1. Clone o repositório:
+- **Interactive Chat**: Continuous conversations with maintained context
+- **Single Messages**: Direct command sending
+- **Clean Interface**: Minimalist design focused on content
+- **Elegant Banner**: Visual presentation with ASCII art
+- **Intuitive Colors**: Clear differentiation between user and assistant
+
+## Installation
+
+1. Clone the repository:
 ```bash
 git clone <repository-url>
 cd openchat-code
 ```
 
-2. Instale as dependências:
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. Configure sua chave da API:
+3. Configure your API key:
 ```bash
 cp .env.example .env
-# Edite o arquivo .env e adicione sua OPENAI_API_KEY
+# Edit the .env file and add your OPENAI_API_KEY
 ```
 
-## Uso
+## Usage
 
-### Chat Interativo
+### Interactive Chat
 ```bash
 npm run dev chat
 ```
-- Digite suas mensagens e receba respostas com contexto mantido
-- Digite "sair" ou pressione Ctrl+C para encerrar
-- Console é limpo automaticamente ao sair
+- Type your messages and receive responses with maintained context
+- Type "sair" or press Ctrl+C to exit
+- Console is automatically cleared on exit
 
-### Mensagem Única
+### Single Message
 ```bash
-npm run dev "Sua mensagem aqui"
+npm run dev "Your message here"
 ```
 
-### Comandos de Desenvolvimento
+### Development Commands
 ```bash
-npm run build    # Compilar TypeScript
-npm run start    # Executar versão compilada
-npm run dev      # Executar em modo desenvolvimento
+npm run build    # Compile TypeScript
+npm run start    # Run compiled version
+npm run dev      # Run in development mode
 ```
 
-## Estrutura do Projeto
+## Project Structure
 
 ```
 openchat-code/
 ├── src/
 │   ├── app/
-│   │   └── index.ts          # Aplicação principal
-│   ├── package.json          # Dependências e scripts
-│   ├── tsconfig.json         # Configuração TypeScript
-│   └── .env.example          # Exemplo de configuração
-├── CLAUDE.md                 # Documentação para Claude Code
-├── README.md                 # Este arquivo
-└── LICENSE.md                # Licença MIT
+│   │   └── index.ts          # Main application
+│   ├── package.json          # Dependencies and scripts
+│   ├── tsconfig.json         # TypeScript configuration
+│   └── .env.example          # Configuration example
+├── CLAUDE.md                 # Documentation for Claude Code
+├── README.md                 # This file
+└── LICENSE.md                # MIT License
 ```
 
-## Tecnologias
+## Technologies
 
-- **TypeScript** - Linguagem principal
+- **TypeScript** - Main language
 - **Node.js** - Runtime
-- **OpenAI SDK** - Integração com API
-- **Commander.js** - Interface CLI
-- **Chalk** - Cores no terminal
-- **Figlet** - Banner ASCII
-- **Readline-sync** - Entrada interativa
+- **OpenAI SDK** - API integration
+- **Commander.js** - CLI interface
+- **Chalk** - Terminal colors
+- **Figlet** - ASCII banner
+- **Readline-sync** - Interactive input
 
-## Configuração
+## Configuration
 
-### Variáveis de Ambiente
+### Environment Variables
 
-Crie um arquivo `.env` na raiz do projeto:
+Create a `.env` file in the project root:
 
 ```env
 OPENAI_API_KEY=your_openai_api_key_here
 ```
 
-### Modelos Suportados
+### Supported Models
 
-O projeto está configurado para usar `gpt-4.1-nano`, mas pode ser facilmente alterado no código.
+The project is configured to use `gpt-4.1-nano`, but can be easily changed in the code.
 
-## Filosofia de Design
+## Design Philosophy
 
-Este projeto segue os princípios de:
+This project follows the principles of:
 
-- **Simplicidade**: Interface limpa sem elementos visuais desnecessários
-- **Funcionalidade**: Foco nas necessidades reais do usuário
-- **Confiabilidade**: Tratamento adequado de erros e interrupções
-- **Extensibilidade**: Código bem estruturado para futuras melhorias
+- **Simplicity**: Clean interface without unnecessary visual elements
+- **Functionality**: Focus on real user needs
+- **Reliability**: Proper handling of errors and interruptions
+- **Extensibility**: Well-structured code for future improvements
 
-## Contribuição
+## Contributing
 
-1. Fork o projeto
-2. Crie uma branch para sua feature
-3. Faça commit das mudanças
-4. Push para a branch
-5. Abra um Pull Request
+1. Fork the project
+2. Create a branch for your feature
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
 
-## Licença
+## License
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para detalhes.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-## Contato
+## Contact
 
-Para dúvidas, sugestões ou problemas, abra uma issue no repositório.
+For questions, suggestions, or issues, please open an issue in the repository.
