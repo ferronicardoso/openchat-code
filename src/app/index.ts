@@ -11,6 +11,8 @@ import boxen from 'boxen';
 
 dotenv.config();
 
+const MODEL_ID = 'gpt-4.1-nano';
+
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
@@ -30,7 +32,7 @@ function showWelcomeBanner() {
   
   console.log(chalk.red(banner));
   console.log(chalk.gray('-'.repeat(60)));
-  console.log(chalk.white('Powered by OpenAI GPT-4.1-nano'));
+  console.log(chalk.white(`Powered by OpenAI ${MODEL_ID}`));
   console.log(chalk.gray('-'.repeat(60)));
   console.log();
 }
@@ -52,14 +54,14 @@ async function sendMessage(messages: Message[]): Promise<string | null> {
   try {
     const completion = await openai.chat.completions.create({
       messages: messages,
-      model: 'gpt-4.1-nano',
+      model: MODEL_ID,
     });
 
     spinner.stop();
     return completion.choices[0]?.message?.content || null;
   } catch (error) {
     spinner.stop();
-    console.log(chalk.red('✗ Erro: ' + (error instanceof Error ? error.message : 'Erro desconhecido')));
+    console.log(chalk.red('✗ Error: ' + (error instanceof Error ? error.message : 'Unknown error')));
     return null;
   }
 }
@@ -67,8 +69,8 @@ async function sendMessage(messages: Message[]): Promise<string | null> {
 async function startInteractiveChat() {
   showWelcomeBanner();
   
-  console.log(chalk.cyan('Chat interativo iniciado!'));
-  console.log(chalk.gray('Digite "sair" ou pressione Ctrl+C para encerrar\n'));
+  console.log(chalk.cyan('Interactive chat started!'));
+  console.log(chalk.gray('Type "exit" or press Ctrl+C to quit\n'));
   
   const messages: Message[] = [];
 
@@ -76,8 +78,8 @@ async function startInteractiveChat() {
     try {
       const userInput = readlineSync.question(chalk.blue('> '));
     
-      if (userInput.toLowerCase() === 'sair') {
-        console.log(chalk.yellow('\nEncerrando chat...'));
+      if (userInput.toLowerCase() === 'exit') {
+        console.log(chalk.yellow('\nClosing chat...'));
         break;
       }
       
@@ -96,13 +98,13 @@ async function startInteractiveChat() {
         messages.push({ role: 'assistant', content: response });
       }
     } catch (error) {
-      // Ctrl+C capturado pelo readline-sync
-      console.log(chalk.yellow('\nEncerrando chat...'));
+      // Ctrl+C captured by readline-sync
+      console.log(chalk.yellow('\nClosing chat...'));
       break;
     }
   }
   
-  // Limpa console ao sair
+  // Clear console on exit
   setTimeout(() => console.clear(), 500);
 }
 
@@ -122,8 +124,8 @@ program
     if (!message) {
       console.log(chalk.cyan('OpenChat Code'));
       console.log(chalk.gray('-'.repeat(40)));
-      console.log(chalk.white('Use "openchat-code chat" para chat interativo'));
-      console.log(chalk.white('ou "openchat-code <mensagem>" para mensagem única'));
+      console.log(chalk.white('Use "openchat-code chat" for interactive chat'));
+      console.log(chalk.white('or "openchat-code <message>" for single message'));
       return;
     }
     
@@ -137,7 +139,7 @@ program
       }
       
     } catch (error) {
-      console.error(chalk.red('Erro: ' + (error instanceof Error ? error.message : 'Erro desconhecido')));
+      console.error(chalk.red('Error: ' + (error instanceof Error ? error.message : 'Unknown error')));
     }
   });
 
