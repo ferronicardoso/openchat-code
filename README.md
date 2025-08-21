@@ -4,6 +4,8 @@ A simple and elegant command-line interface to interact with AI APIs, inspired b
 
 > **Note:** This project was developed 100% using Claude Code, demonstrating the power of AI-assisted development.
 
+> **Disclaimer:** This project does not yet have all the features of Claude Code, but we are actively working on it! :)
+
 ![OpenChat Code](images/openchat-code.png)
 
 ## Features
@@ -109,6 +111,21 @@ This project follows the principles of:
 - **Functionality**: Focus on real user needs
 - **Reliability**: Proper handling of errors and interruptions
 - **Extensibility**: Well-structured code for future improvements
+
+## Future Features
+
+Planned enhancements for upcoming versions:
+
+- **File Management**: Read, write, and edit files directly from the chat
+- **Code Analysis**: Search and analyze codebases with integrated tools
+- **Multiple AI Providers**: Support for Claude, Gemini, and other AI models
+- **Project Context**: Maintain project-wide context and memory
+- **Plugin System**: Extensible architecture for custom tools and integrations
+- **Git Integration**: Direct version control operations and repository management
+- **Web Search**: Real-time information retrieval capabilities
+- **Image Processing**: Support for image analysis and generation
+- **Workflow Automation**: Multi-step task execution and scheduling
+- **Configuration Profiles**: Multiple preset configurations for different use cases
 
 ## Contributing
 
