@@ -17,38 +17,45 @@ A simple and elegant command-line interface to interact with AI APIs, inspired b
 ## Installation
 
 1. Clone the repository:
-```bash
-git clone <repository-url>
-cd openchat-code
-```
+   
+   ```bash
+   git clone <repository-url>
+   cd openchat-code
+   ```
 
 2. Install dependencies:
-```bash
-npm install
-```
+   
+   ```bash
+   npm install
+   ```
 
 3. Configure your API key:
-```bash
-cp .env.example .env
-# Edit the .env file and add your OPENAI_API_KEY
-```
+   
+   ```bash
+   cp .env.example .env
+   # Edit the .env file and add your OPENAI_API_KEY
+   ```
 
 ## Usage
 
 ### Interactive Chat
+
 ```bash
 npm run dev chat
 ```
+
 - Type your messages and receive responses with maintained context
 - Type "sair" or press Ctrl+C to exit
 - Console is automatically cleared on exit
 
 ### Single Message
+
 ```bash
 npm run dev "Your message here"
 ```
 
 ### Development Commands
+
 ```bash
 npm run build    # Compile TypeScript
 npm run start    # Run compiled version
