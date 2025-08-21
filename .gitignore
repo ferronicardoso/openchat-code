@@ -19,4 +19,10 @@
 # Built Visual Studio Code Extensions
 *.vsix
 
+# Node.js
+node_modules/
+
+# Environment variables
+.env
+
 
